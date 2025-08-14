@@ -11,7 +11,8 @@ import AVFoundation
 public class Call: NSObject {
     
     public var uuid: UUID
-    public var data: Data            self.audioSessionActive = args["audioSessionActive"] as? Bool ?? false    public var isOutGoing: Bool
+    public var data: Data
+    public var isOutGoing: Bool
     
     public var handle: String?
     
