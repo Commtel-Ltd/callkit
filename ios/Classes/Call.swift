@@ -11,8 +11,7 @@ import AVFoundation
 public class Call: NSObject {
     
     public var uuid: UUID
-    public var data: Data
-    public var isOutGoing: Bool
+    public var data: Data            self.audioSessionActive = args["audioSessionActive"] as? Bool ?? false    public var isOutGoing: Bool
     
     public var handle: String?
     
@@ -186,9 +185,9 @@ public class Call: NSObject {
         self.supportsUngrouping = true
         self.includesCallsInRecents = true
         self.ringtonePath = ""
-        self.configureAudioSession = true
+        self.configureAudioSession = false
         self.audioSessionMode = ""
-        self.audioSessionActive = true
+        self.audioSessionActive = false
         self.audioSessionPreferredSampleRate = 44100.0
         self.audioSessionPreferredIOBufferDuration = 0.005
         
@@ -231,9 +230,9 @@ public class Call: NSObject {
             self.supportsUngrouping = ios["supportsUngrouping"] as? Bool ?? true
             self.includesCallsInRecents = ios["includesCallsInRecents"] as? Bool ?? true
             self.ringtonePath = ios["ringtonePath"] as? String ?? ""
-            self.configureAudioSession = ios["configureAudioSession"] as? Bool ?? true
+            self.configureAudioSession = ios["configureAudioSession"] as? Bool ?? false
             self.audioSessionMode = ios["audioSessionMode"] as? String ?? ""
-            self.audioSessionActive = ios["audioSessionActive"] as? Bool ?? true
+            self.audioSessionActive = ios["audioSessionActive"] as? Bool ?? false
             self.audioSessionPreferredSampleRate = ios["audioSessionPreferredSampleRate"] as? Double ?? 44100.0
             self.audioSessionPreferredIOBufferDuration = ios["audioSessionPreferredIOBufferDuration"] as? Double ?? 0.005
         }else {
@@ -248,7 +247,7 @@ public class Call: NSObject {
             self.supportsUngrouping = args["supportsUngrouping"] as? Bool ?? true
             self.includesCallsInRecents = args["includesCallsInRecents"] as? Bool ?? true
             self.ringtonePath = args["ringtonePath"] as? String ?? ""
-            self.configureAudioSession = args["configureAudioSession"] as? Bool ?? true
+            self.configureAudioSession = args["configureAudioSession"] as? Bool ?? false
             self.audioSessionMode = args["audioSessionMode"] as? String ?? ""
             self.audioSessionActive = args["audioSessionActive"] as? Bool ?? true
             self.audioSessionPreferredSampleRate = args["audioSessionPreferredSampleRate"] as? Double ?? 44100.0
