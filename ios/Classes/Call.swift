@@ -181,21 +181,21 @@ public class Call: NSObject {
         self.maximumCallGroups = 2
         self.maximumCallsPerCallGroup = 1
         self.supportsDTMF = true
-        self.supportsHolding = true
-        self.supportsGrouping = true
-        self.supportsUngrouping = true
+        self.supportsHolding = false
+        self.supportsGrouping = false
+        self.supportsUngrouping = false
         self.includesCallsInRecents = true
         self.ringtonePath = ""
         self.configureAudioSession = false
-        self.audioSessionMode = ""
+        self.audioSessionMode = "videoChat"
         self.audioSessionActive = false
         self.audioSessionPreferredSampleRate = 44100.0
         self.audioSessionPreferredIOBufferDuration = 0.005
         
-        self.isShowMissedCallNotification = true
+        self.isShowMissedCallNotification = false
         self.missedNotificationSubtitle = "Missed Call"
         self.missedNotificationCallbackText = "Call back"
-        self.isShowCallback = true
+        self.isShowCallback = false
     }
     
     @objc public convenience init(args: NSDictionary) {
